@@ -1,0 +1,42 @@
+<div>
+  <button (click)="getWeatherForecast()">
+    Click to get Weather forecast details.
+ </button>
+</div>
+
+
+<div *ngIf="showTable && !loading">
+  <table>
+    <tr>
+      <th>
+        Date
+      </th>
+      <th>
+        Summary
+      </th>
+      <th>
+        Celsius
+      </th>
+      <th>
+        Farenheit
+      </th>
+    </tr>
+
+    <tr *ngFor="let row of weatherForecastDetails">
+      <td>
+        {{row.date}}
+      </td>
+      <td>
+        {{row.summary}}
+      </td>
+      <td>
+        {{row.temperatureC}}
+      </td>
+      <td>
+        {{row.temperatureF}}
+      </td>
+    </tr>
+    
+  </table>
+
+</div>
